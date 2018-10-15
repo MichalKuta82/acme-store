@@ -9,7 +9,7 @@ class Request
 {
 
 	/**
-	* return all request that we afre interested in
+	* return all request that we are interested in
 	* @param bool $is_array
 	* @return mixed
 	*/

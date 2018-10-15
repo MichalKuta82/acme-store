@@ -30,9 +30,11 @@ elixir(function (mix) {
 
 			//other dependencies
 			bowerPath + '/slick-carousel/slick/slick.min.js',
+			bowerPath + '/axios/dist/axios.min.js',
 
 			'js/acme.js',
 			'js/admin/*.js',
+			'js/pages/*.js',
 			'js/init.js'
 		], 'public/js/all.js', 'resources/assets'
 	);

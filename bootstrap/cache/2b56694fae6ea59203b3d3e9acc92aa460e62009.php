@@ -22,8 +22,6 @@
 					</div>
 				    <?php echo $__env->yieldContent('content'); ?>
 				  </div>
-
 					<script type="text/javascript" src="/js/all.js"></script>
-					<script type="text/javascript">$(document).foundation();</script>
 				</body>
 				</html>

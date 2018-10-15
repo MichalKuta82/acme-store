@@ -1,8 +1,10 @@
 (function () {
 	'use strict';
 	
-	window.ACMESTORE{
+	window.ACMESTORE = {
 		global: {},
-		admin: {}
+		admin: {},
+		homeslider: {},
+		product: {}
 	};
 })();

@@ -3,32 +3,44 @@
 namespace App\Controllers\Admin;
 
 use App\Models\Category;
+use App\Models\SubCategory;
+
 use App\Classes\Request;
+use App\Classes\Session;
+use App\Classes\Redirect;
 use App\Classes\CSRFToken;
 use App\Classes\ValidateRequest;
+
+use App\Controllers\BaseController;
 
 /**
 * 
 */
-class ProductCategoryController
+class ProductCategoryController extends BaseController
 {
 	public $table_name = 'categories';
 	public $categories;
 	public $links;
+	public $subcategories;
+	public $subcategories_links;
 
 	public function __construct()
 	{
 		$total = Category::all()->count();
 		$object = new Category;
+		$subTotal = SubCategory::all()->count();
 
-		list($this->categories, $this->links) = paginate(3, $total, $this->table_name, $object);
+		list($this->categories, $this->links) = paginate(6, $total, $this->table_name, $object);
+		list($this->subcategories, $this->subcategories_links) = paginate(6, $subTotal, 'sub_categories', new SubCategory);
 	}
 	
 	public function show()
 	{
 		return view('admin/products/categories', [
 			'categories' => $this->categories,
-			'links' => $this->links
+			'links' => $this->links,
+			'subcategories' => $this->subcategories,
+			'subcategories_links' => $this->subcategories_links
 		]);
 	}
 
@@ -56,7 +68,9 @@ class ProductCategoryController
  					return view('admin/products/categories', [
 						'categories' => $this->categories,
 						'links' => $this->links,
-						'errors' => $errors
+						'errors' => $errors,
+						'subcategories' => $this->subcategories,
+						'subcategories_links' => $this->subcategories_links
 					]);
  				}
 				//process form data
@@ -65,10 +79,18 @@ class ProductCategoryController
 					'slug' => slug($request->name)
 				]);
 
+				$total = Category::all()->count();
+				$object = new Category;
+				$subTotal = SubCategory::all()->count();
+
+				list($this->categories, $this->links) = paginate(6, $total, $this->table_name, $object);
+				list($this->subcategories, $this->subcategories_links) = paginate(6, $subTotal, 'sub_categories', new SubCategory);
 				return view('admin/products/categories', [
 					'categories' => $this->categories,
 					'links' => $this->links,
-					'success' => 'Category Created'
+					'success' => 'Category Created',
+					'subcategories' => $this->subcategories,
+					'subcategories_links' => $this->subcategories_links
 				]);
 			}
 
@@ -84,7 +106,7 @@ class ProductCategoryController
 		if (Request::has('post')) {
 			$request = Request::get('post');
 
-			if (CSRFToken::verifyCSRFToken($request->token)) {
+			if (CSRFToken::verifyCSRFToken($request->token, false)) {
 				$rules = [
 					'name' => [
 						'required' => true,
@@ -107,9 +129,8 @@ class ProductCategoryController
  				}
 				
 				Category::where('id', $id)->update(['name' => $request->name]);
-				echo json_encode(['success' => 'Record Updated Successfully']);
+				echo json_encode(['success' => 'Record Updated Sucessfully']);
 				exit;
-
 			}
 
 			throw new \Exception('Token mismatch');
@@ -118,5 +139,34 @@ class ProductCategoryController
 
 		return null;
 	}
+
+	public function delete($id)
+	{
+		if (Request::has('post')) {
+			$request = Request::get('post');
+
+			if (CSRFToken::verifyCSRFToken($request->token)) {
+				
+				Category::destroy($id);
+
+				$subcategories = SubCategory::where('category_id', $id)->get();
+				if (count($subcategories)) {
+					
+					foreach ($subcategories as $subcategory) {
+						
+						$subcategory->delete();
+					}
+				}
+				Session::add('success', 'Category Deleted');
+				Redirect::to('/admin/product/categories');
+			}
+
+			throw new \Exception('Token mismatch');
+			
+		}
+
+		return null;
+	}
+
 
 }

@@ -1,9 +1,23 @@
-//font
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Average');
+
 @import url(https://fonts.googleapis.com/css?family=Railway:300,400,600);
 
 @import "../bower/vendor/foundation-sites/assets/foundation";
 
 @import "admin/nav";
+
+@import "__global";
+
+@import "pages/_nav";
+
+@import "pages/_home";
+
+@import "pages/_product";
+
+@import "pages/_auth";
+
+@import "pages/_cart";
+
 
 @import "../bower/vendor/motion-ui/src/motion-ui";
 

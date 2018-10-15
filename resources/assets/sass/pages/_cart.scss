@@ -1,0 +1,12 @@
+.shopping_cart{
+	
+	padding: 6rem;
+
+	@include breakpoint(small only){
+		padding: 4rem 0.3rem;
+
+		p{
+			font-size: 1rem;
+		}
+	}
+}

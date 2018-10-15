@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One|Average");
 @import url(https://fonts.googleapis.com/css?family=Railway:300,400,600);
 /**
  * Foundation for Sites by ZURB
@@ -5259,6 +5260,222 @@ a.thumbnail {
   .admin-title-bar .title-bar .title-bar-title {
     font-size: 1.5rem;
     color: #0a0a0a; }
+
+html, body {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  font-family: 'Average', serif; }
+
+.site_wrapper {
+  min-height: 100%;
+  position: relative; }
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.6rem;
+  padding: 0rem 1rem;
+  font-weight: 500; }
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    h2 {
+      font-size: 1.8rem; } }
+  @media print, screen and (min-width: 64em) {
+    h2 {
+      font-size: 2rem; } }
+
+.notify {
+  display: none;
+  position: fixed;
+  padding: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  background-color: #00AA00;
+  color: #ffffff; }
+
+p {
+  font-family: 'Average', serif;
+  font-size: 2rem; }
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    p {
+      font-size: 1rem; } }
+
+[v-cloak] .v-cloak--hidden {
+  display: none; }
+
+.notification {
+  margin-top: 1.5rem;
+  display: none; }
+  .notification ul li {
+    list-style-type: none; }
+
+.reveal {
+  border: 0;
+  border-radius: 0.5rem; }
+  .reveal:focus {
+    outline-style: none; }
+  .reveal h2 {
+    font-size: 1.5rem;
+    font-weight: 500; }
+
+.fa-edit {
+  color: #8a6d3b; }
+
+.fa-times {
+  color: #ff0000; }
+
+table {
+  border-collapse: collapse; }
+  table th, table tr, table td {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    border: 1px solid #c0c0c0; }
+
+.navigation {
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  font-family: 'Open Sans' 'sans-serif'; }
+  .navigation .logo {
+    background-image: url("/images/logo.png");
+    width: 10rem;
+    height: 2.6rem;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; }
+  .navigation .toggle {
+    line-height: 3rem;
+    padding: 0 0.5rem 0.3rem 0.5rem;
+    background-color: #030303; }
+    .navigation .toggle .menu-icon {
+      margin-top: 0.5rem; }
+      .navigation .toggle .menu-icon:focus {
+        outline-style: none; }
+      .navigation .toggle .menu-icon::after {
+        width: 1.8rem; }
+    .navigation .toggle .title-bar-title {
+      margin: 0 auto; }
+    .navigation .toggle .small-logo {
+      padding-bottom: 0.5rem;
+      display: inline-block;
+      height: 2.6rem;
+      width: 6rem; }
+      .navigation .toggle .small-logo:focus {
+        outline-style: none; }
+  .navigation .top-bar {
+    background-color: #1B1920; }
+    .navigation .top-bar .menu {
+      background-color: #1B1920; }
+      .navigation .top-bar .menu li {
+        color: #def0fc;
+        line-height: 3.4; }
+        .navigation .top-bar .menu li a {
+          color: #def0fc;
+          text-decoration: none;
+          line-height: 2; }
+          @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+            .navigation .top-bar .menu li a {
+              font-size: 0.6rem; } }
+          .navigation .top-bar .menu li a:hover {
+            color: #ffffff; }
+          .navigation .top-bar .menu li a:focus {
+            outline-style: none; }
+    .navigation .top-bar ul.menu.vertical.sub {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      margin-top: 0.7rem; }
+      @media screen and (max-width: 39.9375em) {
+        .navigation .top-bar ul.menu.vertical.sub {
+          margin-top: 2.4rem;
+          width: 100% !important; } }
+      .navigation .top-bar ul.menu.vertical.sub li {
+        border-bottom: 1px dotted #ffffff; }
+        .navigation .top-bar ul.menu.vertical.sub li:last-of-type {
+          border-bottom: none; }
+    @media screen and (max-width: 39.9375em) {
+      .navigation .top-bar ul.menu.vertical {
+        text-align: left; } }
+
+.home .hero {
+  width: 100%;
+  box-sizing: border-box; }
+  .home .hero .hero-slider img {
+    width: 100% !important; }
+
+.display-products {
+  padding: 2rem; }
+  @media screen and (max-width: 39.9375em) {
+    .display-products {
+      padding: 0.7rem;
+      text-align: center; } }
+  .display-products a {
+    color: #0a0a0a; }
+    .display-products a:focus {
+      outline-style: none; }
+  .display-products .card {
+    padding: 0.9rem;
+    margin: 1rem; }
+    .display-products .card .card-section {
+      margin-bottom: 0.5rem;
+      text-align: center; }
+      .display-products .card .card-section .button {
+        border-radius: 0.2rem;
+        cursor: pointer;
+        font-size: 0.8rem; }
+        .display-products .card .card-section .button.more {
+          color: #00d6b2;
+          background-color: #ffffff;
+          border: 1px solid #00d6b2; }
+        .display-products .card .card-section .button.cart {
+          color: #ffffff;
+          background-color: #ff0000;
+          border: 1px solid #ff0000; }
+          .display-products .card .card-section .button.cart:hover {
+            background-color: #e30000; }
+      .display-products .card .card-section img {
+        width: 300px !important;
+        height: 350px !important; }
+
+.product {
+  padding: 6rem !important; }
+  @media screen and (max-width: 39.9375em) {
+    .product {
+      text-align: center;
+      padding: 0.7rem; } }
+  .product p {
+    padding: 1rem;
+    font-size: 1.3rem; }
+  .product .button {
+    border-radius: 0.2rem;
+    cursor: pointer;
+    border: 1px solid #ff0000;
+    margin-left: 1rem; }
+    .product .button:hover {
+      background-color: #e30000; }
+
+.auth {
+  padding: 6rem; }
+  @media screen and (max-width: 39.9375em) {
+    .auth {
+      padding: 3rem 1rem; }
+      .auth p {
+        font-size: 1rem; } }
+  .auth h2 {
+    margin-bottom: 0.5rem !important; }
+
+.shopping_cart {
+  padding: 6rem; }
+  @media screen and (max-width: 39.9375em) {
+    .shopping_cart {
+      padding: 4rem 0.3rem; }
+      .shopping_cart p {
+        font-size: 1rem; } }
 
 .slide-in-down.mui-enter {
   transition-duration: 500ms;

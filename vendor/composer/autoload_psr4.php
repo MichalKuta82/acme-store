@@ -12,6 +12,7 @@ return array(
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
+    'Stripe\\' => array($vendorDir . '/stripe/stripe-php/lib'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Philo\\Blade\\' => array($vendorDir . '/philo/laravel-blade/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
